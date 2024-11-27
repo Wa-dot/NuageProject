@@ -21,8 +21,8 @@ variable "address_space" {
 variable "subnets" {
   description = "Liste des sous-réseaux"
   type = list(object({
-    name             = string
-    address_prefixes = list(string)
+    name               = string
+    address_prefixes   = list(string)
     service_endpoints  = list(string)
   }))
 }
