@@ -8,7 +8,7 @@ variable "rg_name" {
   type        = string
 }
 
-variable "physical_loc" {
+variable "location" {
   description = "value"
   type        = string
 }
