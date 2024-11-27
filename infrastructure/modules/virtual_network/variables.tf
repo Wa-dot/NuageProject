@@ -18,7 +18,6 @@ variable "address_space" {
   type        = list(string)
 }
 
-
 variable "subnets" {
   description = "Liste des sous-réseaux"
   type = list(object({
