@@ -52,6 +52,7 @@ resource "azurerm_windows_web_app" "np_web_app" {
   }
 }
 
+
 resource "azurerm_role_assignment" "app_service_storage_access" {
   principal_id         = azurerm_windows_web_app.np_web_app.identity[0].principal_id
   role_definition_name = "Storage Blob Data Contributor"
