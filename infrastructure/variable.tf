@@ -55,6 +55,8 @@ variable "storage_account_name" {
   description = "Nom du compte de stockage"
 }
 
+
+
 #Virtual Network
 variable "network_name" {
   description = "Nom du réseau virtuel"
@@ -120,4 +122,5 @@ variable "db_version" {
     description = "Version of the PostgreSQL server"
     type = string
 }
+
 
