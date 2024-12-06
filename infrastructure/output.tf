@@ -79,12 +79,6 @@ output "app_id" {
   value       = module.app_service.app_id 
 }
 
-# Outputs the fully qualified domain name (FQDN) of the Linux Web App
-output "app_id" {
-  description = "FQND of the Linux Web App"
-  value       = module.app_service.app_service_fqdn 
-}
-
 ## Blob storage, all following outputs are fetched from the blob storage module
 
 # Outputs of the ID of the Azure Storage Account

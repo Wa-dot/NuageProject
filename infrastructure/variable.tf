@@ -3,6 +3,14 @@ variable "resource_group_name" {
   type        = string
   description = "Projet Nuage"
 }
+variable "subscription_id" {
+  type        = string
+  description = "Azure subscription id "
+}
+variable "tenant_id" {
+  type        = string
+  description = "Azure tenant id"
+}
 
 variable "location" {                   #Pas nécessaire mais nous avons choisi de la renseigner
   type        = string
