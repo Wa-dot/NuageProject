@@ -2,41 +2,41 @@
 
 # Outputs the ID of the resource group
 
-output "rg_id" {
+output "resource_group_id" {
   description = "Resource group ID"
-  value = module.resource_group.rg.id
+  value = module.resource_group.resource_group_id
 }
 
 # Outputs the name of the resource group
-output "rg_name" {
+output "resource_group_name" {
   description = "Resource group name"
-  value       = module.resource_group.rg_name
+  value       = module.resource_group.ressource_group_name
 }
 
 # Outputs the physical location of the resource group
-output "physical_loc" {
+output "location" {
   description = "Resource group and modules physical location"
-  value       = module.resource_group.physical_loc
+  value       = module.resource_group.location
 }
 
 ## Virtual network, all following outputs are fetched from the virtual network module
 
 # Outputs ID of the virtual network
-output "vnet_id" {
+output "virtual_network_id" {
   description = "Virtual network ID"
-  value       = module.vnet.vnet_id
+  value       = module.virtual_network.virtual_network_id
 }
 
 # Outputs the name of the virtual network
-output "vnet_name" {
+output "virtual_network_name" {
   description = "Virtual network name"
-  value       = module.vnet.vnet_name
+  value       = module.virtual_network.virtual_network_name
 }
 
 # Outputs information about subnets in the virtual network
 output "subnets" {
   description = "Subnets"
-  value       = module.vnet.subnets
+  value       = module.virtual_network.subnets
 }
 
 ## PostgreSQL, all following ouputs are fetched from the postgresql module
@@ -112,7 +112,7 @@ output "storage_blob_name" {
 }
 
 # Outputs the URL for accessing the blob storage
-output "storage_url" {
+output "storage_blob_url" {
   description = "Storage url"
   value       = module.blob_storage.storage_url
 }

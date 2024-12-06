@@ -4,7 +4,7 @@ resource "random_string" "name" {
 }
 
 resource "azurerm_blob_storage" "blob_storage" {
-    name                   = var.blob_storage_name
+    name                   = "nuagestoracc${random_string.name.result}"
     resource_group_name    = var.resource_group_name
     location               = var.location
     account_tier           = "Standard"

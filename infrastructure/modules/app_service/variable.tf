@@ -3,7 +3,7 @@ variable "service_plan_name" {
   type        = string
 }
 
-variable "rg_name" {
+variable "resource_group_name" {
   description = "value"
   type        = string
 }

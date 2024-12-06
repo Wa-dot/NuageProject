@@ -9,15 +9,15 @@ resource "azurerm_resource_group" "example" {
 
 resource "azurerm_service_plan" "np_plan" {
   name                = var.service_plan_name
-  resource_group_name = var.rg_name
+  resource_group_name = var.resource_group_name
   location            = var.location
   sku_name            = "P1v2"
   os_type             = "Windows"
 }
 
 resource "azurerm_windows_web_app" "np_web_app" {
-  name                = local.web_app_name
-  resource_group_name = var.rg_name
+  name                = var.web_app_name
+  resource_group_name = var.resource_group_name
   location            = azurerm_service_plan.np_plan.location
   service_plan_id     = azurerm_service_plan.np_plan.id
   virtual_network_subnet_id = var.subnet_id

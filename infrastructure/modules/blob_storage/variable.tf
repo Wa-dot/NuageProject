@@ -19,12 +19,6 @@ variable "storage_container_name" {
     description = "Storage container name in Microsoft Azure"
 }
 
-variable "location" {
-    type        = string
-    description = "Location in Microsoft Azure"
-    default     = "West Europe"
-}
-
 variable "subnet_id" {
     type        = string
     description = "Subnet ID"
