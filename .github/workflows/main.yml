@@ -1,0 +1,39 @@
+name: NuageProject
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    types:
+        - opened
+        - synchronize
+
+permissions:
+  contents: read
+
+jobs:
+  check-service:
+    name: Check Service
+    # Will run on every pull and push request
+    if: github.event_name == 'pull_request' || github.event_name == 'push' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+            python-version: '3.12'
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Build
+        run: uv build
+
+      - name: Test
+        run: uv run pytest tests/
