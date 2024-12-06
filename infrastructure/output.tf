@@ -4,19 +4,19 @@
 
 output "rg_id" {
   description = "Resource group ID"
-  value = module.resource_group.rg.id
+  value = module.resource_group.resource_group_id
 }
 
 # Outputs the name of the resource group
 output "rg_name" {
   description = "Resource group name"
-  value       = module.resource_group.rg_name
+  value       = module.resource_group.group_name
 }
 
 # Outputs the physical location of the resource group
 output "physical_loc" {
   description = "Resource group and modules physical location"
-  value       = module.resource_group.physical_loc
+  value       = module.resource_group.location
 }
 
 ## Virtual network, all following outputs are fetched from the virtual network module

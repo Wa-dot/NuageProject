@@ -16,7 +16,7 @@ resource "azurerm_service_plan" "np_plan" {
 }
 
 resource "azurerm_windows_web_app" "np_web_app" {
-  name                = local.web_app_name
+  name                = var.web_app_name
   resource_group_name = var.rg_name
   location            = azurerm_service_plan.np_plan.location
   service_plan_id     = azurerm_service_plan.np_plan.id
