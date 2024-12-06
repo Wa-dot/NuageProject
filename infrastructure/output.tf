@@ -5,17 +5,19 @@
 output "resource_group_id" {
   description = "Resource group ID"
   value = module.resource_group.resource_group_id
+  value = module.resource_group.resource_group_id
 }
 
 # Outputs the name of the resource group
 output "resource_group_name" {
   description = "Resource group name"
-  value       = module.resource_group.ressource_group_name
+  value       = module.resource_group.resource_group_name
 }
 
 # Outputs the physical location of the resource group
 output "location" {
   description = "Resource group and modules physical location"
+  value       = module.resource_group.location
   value       = module.resource_group.location
 }
 
