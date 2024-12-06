@@ -18,9 +18,9 @@ resource "azurerm_blob_storage" "blob_storage" {
 
 resource "azurerm_storage_container" "storage_container" {
   name                  = "api"
-  storage_account_name  = azurerm_storage_account.storage_account.name
+  storage_account_id    = azurerm_storage_account.storage_account.id
   container_access_type = "private"
-  depends_on           = [azurerm_storage_account.storage_account]
+  depends_on            = [azurerm_storage_account.storage_account]
 }
 
 resource "azurerm_storage_blob" "storage_blob" {

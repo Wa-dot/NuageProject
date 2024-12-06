@@ -5,7 +5,6 @@
 output "resource_group_id" {
   description = "Resource group ID"
   value = module.resource_group.resource_group_id
-  value = module.resource_group.resource_group_id
 }
 
 # Outputs the name of the resource group
@@ -17,7 +16,6 @@ output "resource_group_name" {
 # Outputs the physical location of the resource group
 output "location" {
   description = "Resource group and modules physical location"
-  value       = module.resource_group.location
   value       = module.resource_group.location
 }
 
@@ -89,16 +87,16 @@ output "storage_account_id" {
   value       = module.blob_storage.storage_account_id
 }
 
-# Outputs the ID of the Azure Storage Container
-output "storage_container_id" {
-  description = "L'ID du conteneur de stockage Azure."
-  value       = module.blob_storage.storage_container_id
-}
-
 # Outputs the name of the Azure Storage Account
 output "storage_account_name" {
   description = "Name of the storage account"
   value       = module.blob_storage.storage_account_name
+}
+
+# Outputs the ID of the Azure Storage Container
+output "storage_container_id" {
+  description = "L'ID du conteneur de stockage Azure."
+  value       = module.blob_storage.storage_container_id
 }
 
 # Outputs the name of the Azure Storage Container

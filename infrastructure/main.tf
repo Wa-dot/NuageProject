@@ -47,10 +47,10 @@ module "postgresql" {
 module "blob_storage" {
   source   = "./modules/blob_storage"
   resource_group_name = module.resource_group.group_name
-  subnet_id = module.virtual_network.subnets["subnet_blob_storage"]
   blob_storage_name = var.blob_storage_name
+  location = module.resource_group.location
   type = var.type
-  storage_container_name = var.storage_mb
+  subnet_id = module.virtual_network.subnets["subnet_storage"]
   depends_on = [ module.virtual_network ]
 }
 

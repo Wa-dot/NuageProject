@@ -1,25 +1,24 @@
-variable "storage_account_name" {
-  type        = string
-  description = "Nom du compte de stockage"
-}
-
 variable "resource_group_name" {
   type        = string
-  description = "Nom du groupe de ressources"
+  description = "Resource group name"
+}
+
+variable "location" {
+  type        = string
+  description = "Physical location of the resource group"
+}
+
+variable "blob_storage_name" {
+  type        = string
+  description = "Blob storage name in Microsoft Azure"
 }
 
 variable "subnet_id" {
   type        = string
-  description = "ID du subnet pour les règles réseau"
+  description = "ID of the subnet"
 }
 
 variable "type" {
     type        = string
     description = "Type of blob storage"
-    default     = "Standard_LRS"
-}
-
-variable "storage_container_name" {
-    type        = string
-    description = "Storage container name in Microsoft Azure"
 }
