@@ -24,3 +24,8 @@ variable "location" {
     description = "Location in Microsoft Azure"
     default     = "West Europe"
 }
+
+variable "subnet_id" {
+    type        = string
+    description = "Subnet ID"
+}
