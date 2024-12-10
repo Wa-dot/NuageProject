@@ -23,7 +23,7 @@ resource "azurerm_network_security_group" "security_group" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
-  security_rule = {
+  security_rule {
     name                       = "AllowDbSubTraffic"
     priority                   = 1001
     direction                  = "Inbound"

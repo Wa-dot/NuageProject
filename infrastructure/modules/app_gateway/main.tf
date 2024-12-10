@@ -27,7 +27,7 @@ resource "azurerm_application_gateway" "np_app_gateway" {
 
   frontend_ip_configuration {
     name                 = "frontend-ip-config"
-    public_ip_address_id = azurerm_public_ip.np_public_id.id
+    public_ip_address_id = azurerm_public_ip.np_public_ip.id
   }
 
   backend_address_pool {

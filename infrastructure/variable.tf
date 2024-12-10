@@ -14,11 +14,6 @@ variable "resource_group_name" {
   type        = string
   default     = "nuage_resource_group"
 }
-variable "location" {
-  description = "Resource group and modules physical location"
-  type        = string
-  default     = "West Europe"
-}
 
 # Blob Storage
 variable "blob_storage_name" {
@@ -106,6 +101,11 @@ variable "db_name" {
     description = "Name given to the created database"
     type        = string
     default     = "nuage_database"
+}
+variable "db_port" {
+    description = "Port given to the created database"
+    type        = string
+    default     = 5130
 }
 variable "sku_name" {
     description = "SKU name"

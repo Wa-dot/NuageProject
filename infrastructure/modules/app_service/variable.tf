@@ -30,16 +30,6 @@ variable "database_host" {
   type        = string
 }
 
-variable "database_port" {
-  description = "DB port number"
-  type        = number
-}
-
-variable "database_name" {
-  description = "DB name"
-  type        = string
-}
-
 variable "admin_username" {
   description = "Login used to connect to db"
   type        = string

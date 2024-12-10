@@ -22,15 +22,9 @@ resource "azurerm_windows_web_app" "np_web_app" {
   service_plan_id     = azurerm_service_plan.np_plan.id
   virtual_network_subnet_id = var.subnet_id
 
-  depends_on = [
-  azurerm_service_plan.np_plan,
-  azurerm_role_assignment.app_service_storage_access
-]
 
   app_settings = {
     DATABASE_HOST          = var.database_host
-    DATABASE_PORT          = var.database_port
-    DATABASE_NAME          = var.database_name
     DATABASE_USER          = var.admin_username
     DATABASE_PASSWORD      = var.admin_password
 

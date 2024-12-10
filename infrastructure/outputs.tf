@@ -36,7 +36,7 @@ output "virtual_network_name" {
 # Outputs information about subnets in the virtual network
 output "subnets" {
   description = "Subnets"
-  value       = module.virtual_network.subnets
+  value = module.virtual_network.subnet_ids
 }
 
 ## PostgreSQL, all following ouputs are fetched from the postgresql module
@@ -59,17 +59,6 @@ output "postgresql_server_id" {
   value       = module.postgresql.postgresql_server_id
 }
 
-# Outputs the port used by PostgreSQL (5432 is the default port for PostgreSQL)
-output "database_port" {
-  description = "Port of the PostgreSQL databse"
-  value       = 5432
-}
-
-# Outputs the name of the PostgreSQL database
-output "database_name" {
-  description = "Database name"
-  value       = module.postgresql.database_name 
-}
 
 ## App service, all following outputs are fetched from the app-service module
 
@@ -114,5 +103,5 @@ output "storage_blob_name" {
 # Outputs the URL for accessing the blob storage
 output "storage_blob_url" {
   description = "Storage url"
-  value       = module.blob_storage.storage_url
+  value       = module.blob_storage.storage_blob_url
 }
