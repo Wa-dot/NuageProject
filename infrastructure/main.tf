@@ -63,6 +63,8 @@ module "app_service" {
   database_host        = module.postgresql.postgresql_server_fqdn
   admin_password       = var.admin_password
   admin_username       = var.admin_username
+  database_name        = var.db_name
+  database_port        = var.db_port
 
   # BLOB STORAGE CONNECTION
   storage_url          = module.blob_storage.storage_blob_url
