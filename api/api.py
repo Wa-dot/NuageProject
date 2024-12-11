@@ -82,8 +82,8 @@ def get_environment_variable(key, default=None):
     return value
 
 
-@app.get("/quotes")
-def read_quotes():
+@app.get("/products")
+def read_products():
     try:
         account_url = get_environment_variable("STORAGE_ACCOUNT_URL")
         default_credential = DefaultAzureCredential(process_timeout=2)
@@ -93,9 +93,9 @@ def read_quotes():
         container_name = get_environment_variable("STORAGE_CONTAINER_NAME")
         container_client = blob_service_client.get_container_client(container=container_name)
 
-        # Fetch quotes.json blob from the container
-        quotes = json.loads(container_client.download_blob("quotes.json").readall())
+        # Fetch products.json blob from the container
+        products = json.loads(container_client.download_blob("products.json").readall())
     except HttpResponseError as error:
         raise HTTPException(status_code=500, detail=str(error))
 
-    return {"quotes": quotes}
+    return {"products": products}
