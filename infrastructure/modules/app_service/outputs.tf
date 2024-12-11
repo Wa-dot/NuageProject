@@ -5,5 +5,5 @@ output "app_id" {
 
 output "app_service_fqdn" {
   description = "The default hostname of the Windows Web App"
-  value       = azurerm_windows_web_app.app_service.default_hostname
+  value       = azurerm_windows_web_app.np_web_app.default_hostname
 }
