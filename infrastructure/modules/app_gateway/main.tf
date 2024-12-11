@@ -1,13 +1,13 @@
 resource "azurerm_public_ip" "np_public_ip" {
   name                = "np_public_ip"
-  resource_group_name = var.rg_name
+  resource_group_name = var.resource_group_name
   location            = var.physical_loc
   allocation_method   = "Static"
 }
 
 resource "azurerm_application_gateway" "np_app_gateway" {
   name                = var.gateway_name
-  resource_group_name = var.rg_name
+  resource_group_name = var.resource_group_name
   location            = var.physical_loc
   sku {
     name     = "Standard_v2"
@@ -27,7 +27,7 @@ resource "azurerm_application_gateway" "np_app_gateway" {
 
   frontend_ip_configuration {
     name                 = "frontend-ip-config"
-    public_ip_address_id = azurerm_public_ip.np_public_id.id
+    public_ip_address_id = azurerm_public_ip.np_public_ip.id
   }
 
   backend_address_pool {

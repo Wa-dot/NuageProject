@@ -3,7 +3,7 @@ variable "service_plan_name" {
   type        = string
 }
 
-variable "rg_name" {
+variable "resource_group_name" {
   description = "value"
   type        = string
 }
@@ -27,16 +27,6 @@ variable subnet_id {
 
 variable "database_host" {
   description = "DB hostname"
-  type        = string
-}
-
-variable "database_port" {
-  description = "DB port number"
-  type        = number
-}
-
-variable "database_name" {
-  description = "DB name"
   type        = string
 }
 
