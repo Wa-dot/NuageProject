@@ -86,7 +86,6 @@ variable "web_app_name" {
 variable "postgresql_server_name" {
     description = "Name given to the postgresql server"
     type        = string
-    default     = "nuage_postgresql_server"
 }
 variable "admin_username" {
     description = "Username of the administrator of the PostgreSQL"

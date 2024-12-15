@@ -8,9 +8,14 @@ terraform {
   }
 }
 provider "azurerm" {  
-  features {}
+  features {
+     resource_group {
+       prevent_deletion_if_contains_resources = false
+     }   
+    }
   subscription_id = var.subscription_id
   tenant_id       = var.tenant_id
+  
 }
 
 # Création d'un groupe de ressources
@@ -63,8 +68,6 @@ module "app_service" {
   database_host        = module.postgresql.postgresql_server_fqdn
   admin_password       = var.admin_password
   admin_username       = var.admin_username
-  database_name        = var.db_name
-  database_port        = var.db_port
 
   # BLOB STORAGE CONNECTION
   storage_url          = module.blob_storage.storage_blob_url

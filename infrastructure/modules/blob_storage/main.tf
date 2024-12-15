@@ -1,6 +1,8 @@
 resource "random_string" "name" {
   length  = 8
   special = false
+  lower   = true
+  upper   = false
 }
 
 resource "azurerm_storage_account" "storage_account" {

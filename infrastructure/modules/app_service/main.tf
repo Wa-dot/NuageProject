@@ -4,16 +4,17 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
-  location = "West Europe"
+  location = "westeurope"
 }
 
 resource "azurerm_service_plan" "np_plan" {
   name                = var.service_plan_name
   resource_group_name = var.resource_group_name
   location            = var.location
-  sku_name            = "P1v2"
-  os_type             = "Windows"
+  sku_name            = "B1"
+  os_type             = "Linux"
 }
+
 
 resource "azurerm_windows_web_app" "np_web_app" {
   name                = var.web_app_name
