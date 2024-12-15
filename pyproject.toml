@@ -1,0 +1,14 @@
+[project]
+name = "products-api"
+description = "A simple API for managing products"
+version = "1.0.0"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "fastapi-cli",
+    "azure-storage-blob",
+    "azure-identity"]
+
+[tool.uv]
+dev-dependencies = ["pytest", "httpx", "pytest-mock"]
